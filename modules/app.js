@@ -9,31 +9,39 @@ export default class App {
 
   init() {
     window.addEventListener('load', () => {
-      this.load();
       this.menu = new Menu('menu');
       this.list = new List('books-list');
+      this.load();
+      this.update();
       this.navigate(window.location.hash);
       window.addEventListener('popstate', () => this.navigate(window.location.hash));
       const form = document.getElementById('form');
       form.addEventListener('submit', (e) => {
-        const { author, title } = e.namedValues;
+        const temp = {};
+        new FormData(form).forEach((value, key) => { temp[key] = value; });
+        const { author, title } = temp;
         const book = { author, title };
         this.add(book);
         e.preventDefault();
+        form.reset();
       });
     });
   }
 
   add(book) {
     this.state.books.push(book);
-    this.list.update(this.state.books.map((data, i) => ({ data, action: () => this.remove(i) })));
+    this.update();
     this.save();
   }
 
   remove(i) {
     this.state.books.splice(i, 1);
-    this.list.update(this.state.books.map((data, i) => ({ data, action: () => this.remove(i) })));
+    this.update();
     this.save();
+  }
+
+  update() {
+    this.list.update(this.state.books.map((data, i) => ({ data, action: () => this.remove(i) })));
   }
 
   navigate(hash) {
