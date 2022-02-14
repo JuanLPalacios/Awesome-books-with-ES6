@@ -12,6 +12,8 @@ export default class App {
       this.load();
       this.menu = new Menu('menu');
       this.list = new List('books-list');
+      this.navigate(window.location.hash);
+      window.addEventListener('popstate', () => this.navigate(window.location.hash));
     });
   }
 
@@ -25,6 +27,15 @@ export default class App {
     this.state.books.splice(i, 1);
     this.list.update(this.state.books.map((data, i) => ({ data, action: () => this.remove(i) })));
     this.save();
+  }
+
+  navigate(hash) {
+    if (!hash) hash = '#list';
+    this.menu.update(hash);
+    document.querySelectorAll('section.active').forEach((section) => {
+      section.classList.remove('active');
+    });
+    document.querySelector(hash).classList.add('active');
   }
 
   save() {

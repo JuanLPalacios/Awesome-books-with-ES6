@@ -1,11 +1,10 @@
 export default class Menu {
   constructor(id) {
     this.id = id;
-    this.hash = null;
   }
 
   update(hash) {
-    // TODO
-    this.hash = hash;
+    document.querySelectorAll(`#${this.id} a.active`).forEach((a) => a.classList.remove('active'));
+    document.querySelector(`#${this.id} a[href=${hash}]`).classList.remove('active');
   }
 }
