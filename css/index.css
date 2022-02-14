@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+section#contact ul,
+section#contact p {
+  margin: auto;
+  width: 40%;
+  text-align: left;
+}
+
+footer {
+  border: solid 3px black;
+  padding: 5px;
+  position: fixed;
+  bottom: 5px;
+  width: calc(100% - 20px);
+}
+
+h1.logo {
+  margin: auto 5px;
+  font-size: 1.23em;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a.active {
+  color: blue;
+}
+
+li.link-item {
+  padding: 5px 10px;
+}
+
+ul.link-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+header.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  border: solid 3px black;
+}
+
+body {
+  text-align: center;
+}
+
+h6 {
+  margin: auto 5px;
+}
+
+.heading,
+h2 {
+  font-family: 'Rowdies', cursive;
+  font-size: 30px;
+}
+
+hr {
+  width: 15%;
+  margin-top: 20px;
+}
+
+#books-list {
+  padding: 0;
+  border: 2px solid;
+  width: 40%;
+  margin: auto;
+  text-align: left;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+#books-list li {
+  display: grid;
+  grid-template-columns: auto 80px;
+  padding-right: 10px;
+}
+
+#books-list li:nth-child(2n+1) {
+  background-color: #d3d3d3;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: auto;
+  gap: 10px;
+}
+
+.btnAdd {
+  align-self: flex-end;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+.time {
+  text-align: right;
+}
