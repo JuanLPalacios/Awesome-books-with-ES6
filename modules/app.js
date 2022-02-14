@@ -14,6 +14,13 @@ export default class App {
       this.list = new List('books-list');
       this.navigate(window.location.hash);
       window.addEventListener('popstate', () => this.navigate(window.location.hash));
+      const form = document.getElementById('form');
+      form.addEventListener('submit', (e) => {
+        const { author, title } = e.namedValues;
+        const book = { author, title };
+        this.add(book);
+        e.preventDefault();
+      });
     });
   }
 
