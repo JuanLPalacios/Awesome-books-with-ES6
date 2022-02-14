@@ -4,6 +4,19 @@
 
 > a simple Implementation of ES6 modules version of Awesome books SPA prototype.
 
+## How To Set Up
+
+to set it up yo have to first run 
+
+```
+npm install
+```
+
+after that you can run it locally with:
+```
+npm run dev
+```
+
 ## Built With
 
 - HTML
