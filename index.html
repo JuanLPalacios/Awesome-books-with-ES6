@@ -3,12 +3,54 @@
 <head lang="en">
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Awesome Books</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/index.css'>
     <script src='index.js'></script>
 </head>
 <body>
-    
+    <header class="nav-bar">
+        <h1 class="logo">Awesome Books</h1>
+        <nav id="menu">
+            <ul class="link-list">
+                <li class="link-item"><a href="#list" class="active">List</a></li>
+                <li class="link-item"><a href="#add-new">Add new</a></li>
+                <li class="link-item"><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p class="time"></p>
+    <main>
+        <section id="list" class="active">
+            <h1 class="heading">Awesome Books</h1>
+            <ul id="books-list">
+
+            </ul>
+        </section>
+        <section id="add-new">
+            <h2>Add a new book</h2>
+            <form action="#" id="form">
+                <input type="text" class="title" id="title" placeholder="title">
+                <input type="text" class="author" id="author" placeholder="author">
+                <button class="btnAdd">Add</button>
+            </form>
+        </section>
+        <section id="contact">
+
+            <h2>Contact information</h2>
+            <p>
+                Do you have any questions or you just want to say "Hello"?
+                You can reach out to us!
+            </p>
+            <ul>
+                <li>Our e-mail: example@mail.com</li>
+                <li>Our phone number: 001122334455</li>
+                <li>Our address: Streetname 22, Silicon valley, Country</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        copyright 2022
+    </footer>
 </body>
 </html>
